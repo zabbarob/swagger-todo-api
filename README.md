@@ -22,3 +22,12 @@ curl http://127.0.0.1:10010/hello?name=Scott
 # start the swagger editor (opens `api/swagger/swagger.yaml`)
 swagger project edit
 ```
+
+# Mock Mode
+
+```bash
+# start swagger in mock mode
+swagger project start -m
+```
+
+Open http://localhost:10010 to test the API with mocked data objects.
