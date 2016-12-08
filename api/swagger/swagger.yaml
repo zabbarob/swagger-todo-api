@@ -78,6 +78,28 @@ paths:
         204:
           description: Todo deleted
       x-swagger-router-controller: DeleteTodoById
+    put:
+      description: Update a single todo by ID
+      operationId: UpdateTodoById
+      parameters:
+      - name: id
+        in: path
+        description: ID of the todo to update
+        required: true
+        type: integer
+        format: int64
+      - name: updated_todo
+        in: body
+        description: The updated todo
+        required: true
+        schema:
+          $ref: "#/definitions/Todo"
+      responses:
+        200:
+          description: Todo updated
+        400:
+          description: Yikes! An Error!
+      x-swagger-router-controller: UpdateTodoById
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
