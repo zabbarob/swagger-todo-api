@@ -29,6 +29,22 @@ paths:
             type: array
             items:
               $ref: "#/definitions/Todo"
+    post:
+      description: Add a new todo
+      operationId: AddTodo
+      produces:
+      - application/json
+      parameters:
+      - name: todo
+        in: body
+        description: The todo to be added
+        required: true
+        schema:
+          $ref: "#/definitions/Todo"
+      responses:
+        200:
+          description: Successful todo add
+      x-swagger-router-controller: AddTodo
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
