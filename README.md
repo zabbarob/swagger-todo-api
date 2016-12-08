@@ -31,3 +31,22 @@ swagger project start -m
 ```
 
 Open http://localhost:10010 to test the API with mocked data objects.
+
+# CORS
+
+Without CORS enabled the Swagger editor will throw an error when accessing API resources ("Try this operation" button in editor).
+
+```bash
+npm install cors --save
+```
+
+Then activate cors in `app.js`:
+
+```javascript
+var cors = require('cors');
+...
+SwaggerExpress.create(config, function(err, swaggerExpress) {
+  if (err) { throw err; }
+  app.use(cors());
+...
+```
