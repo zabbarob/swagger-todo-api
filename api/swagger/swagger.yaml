@@ -58,3 +58,26 @@ definitions:
     properties:
       message:
         type: string
+  Todo:
+    type: object
+    properties:
+      todo_id:
+        type: integer
+        description: Id for the todo
+      todo:
+        type: string
+        description: The todo item
+      datecreated:
+        type: string
+        format: date-time
+        description: Time-stamp when the todo was created, set by server
+      author:
+        type: string
+        description: Creator or owner of the todo
+      duedate:
+        type: string
+        format: date-time
+        description: When the todo is due
+      completed:
+        type: boolean
+        description: Indicates if the todo has been completed or not
