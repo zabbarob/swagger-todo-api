@@ -15,6 +15,7 @@ function FindTodoById(req, res) {
     if (!response) {
         response = { error: 'Error: Todo doesn\'t exist' };
         console.log(response.error);
+        res.statusCode = 404;
     }
 
     res.end(JSON.stringify(response));
