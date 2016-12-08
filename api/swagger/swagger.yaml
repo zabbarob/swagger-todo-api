@@ -29,6 +29,7 @@ paths:
             type: array
             items:
               $ref: "#/definitions/Todo"
+      x-swagger-router-controller: GetAllTodos
     post:
       description: Add a new todo
       operationId: AddTodo
